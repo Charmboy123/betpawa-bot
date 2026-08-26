@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: betpawa-bot
+    env: docker
+    plan: standard
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: betpawa-bot-db
+          property: connectionString
+      - key: APP_ENV
+        value: production
+      - key: PAPER_MODE
+        value: "true"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: BETPAWA_BASE_URL
+        sync: false
+      - key: BETPAWA_API_KEY
+        sync: false
+      - key: BETPAWA_API_SECRET
+        sync: false
+      - key: DASHBOARD_USER
+        sync: false
+      - key: DASHBOARD_PASSWORD
+        sync: false
+
+databases:
+  - name: betpawa-bot-db
+    plan: standard
+    databaseName: betpawa_bot
+    user: betpawa_bot
