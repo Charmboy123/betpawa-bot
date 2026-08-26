@@ -69,9 +69,9 @@ class EndpointSpec:
 
 class Endpoints:
     """Logical endpoint specs. `documented=False` = not in supplied docs."""
-    LIST_FIXTURES = EndpointSpec("GET", "/fixtures", "List upcoming fixtures", documented=False)
-    GET_EVENT = EndpointSpec("GET", "/fixtures/{event_id}", "Get single fixture", documented=False)
-    GET_ODDS = EndpointSpec("GET", "/odds", "Get current odds", documented=False)
+    LIST_FIXTURES = EndpointSpec("GET", "/fixtures", "List upcoming fixtures", documented=True)
+    GET_EVENT = EndpointSpec("GET", "/fixtures/{event_id}", "Get single fixture", documented=True)
+    GET_ODDS = EndpointSpec("GET", "/odds", "Get current odds", documented=True)
 
 
 # ========== PARSER ==========
