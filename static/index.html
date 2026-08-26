@@ -1,1 +1,67 @@
-
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BetPawa Bot — Dashboard</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header>
+  <div class="brand">BetPawa Bot</div>
+  <nav>
+    <a href="#" data-view="dashboard">Dashboard</a>
+    <a href="#" data-view="opportunities">Opportunities</a>
+    <a href="#" data-view="proposals">Proposals</a>
+    <a href="#" data-view="bankroll">Bankroll</a>
+    <a href="#" data-view="performance">Performance</a>
+    <a href="/logout">Logout</a>
+  </nav>
+</header>
+<main id="view">
+  <section id="dashboard" class="view">
+    <h2>Dashboard</h2>
+    <div class="cards" id="dash-cards"></div>
+    <div id="system-status" class="card"></div>
+  </section>
+  <section id="opportunities" class="view hidden">
+    <h2>Live Opportunities</h2>
+    <table id="opp-table">
+      <thead><tr>
+        <th>Match</th><th>League</th><th>Market</th><th>Model %</th>
+        <th>Fair</th><th>Edge</th><th>EV</th><th>Agreement</th><th>Decision</th>
+      </tr></thead><tbody></tbody>
+    </table>
+  </section>
+  <section id="proposals" class="view hidden">
+    <h2>Bet Proposals</h2>
+    <div class="tabs">
+      <button data-status="AWAITING_APPROVAL">Pending</button>
+      <button data-status="APPROVED">Approved</button>
+      <button data-status="REJECTED">Rejected</button>
+      <button data-status="">All</button>
+    </div>
+    <table id="prop-table">
+      <thead><tr>
+        <th>ID</th><th>Market</th><th>Selection</th><th>Odds</th>
+        <th>Model %</th><th>Edge</th><th>EV</th><th>Stake</th><th>Status</th><th>Actions</th>
+      </tr></thead><tbody></tbody>
+    </table>
+  </section>
+  <section id="bankroll" class="view hidden">
+    <h2>Bankroll</h2>
+    <div id="bankroll-summary" class="cards"></div>
+    <h3>History</h3>
+    <table id="bankroll-table">
+      <thead><tr><th>When</th><th>Kind</th><th>Amount</th><th>Balance</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+  <section id="performance" class="view hidden">
+    <h2>Performance</h2>
+    <div id="perf-summary" class="cards"></div>
+  </section>
+</main>
+<script src="/static/js/app.js"></script>
+</body>
+</html>
